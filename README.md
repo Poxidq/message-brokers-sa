@@ -1,6 +1,8 @@
 ## How to run
-1. Define `EMAIL_ADDRESS`, `EMAIL_PASSWORD`, `EMAIL_RECIPIENTS`
-2. Start this up
+1. Define `EMAIL_ADDRESS`, `EMAIL_PASSWORD`, `EMAIL_RECIPIENTS` 
+  we use gmail, so "password" should be generated as shown here: https://dev.to/go/sending-e-mail-from-gmail-using-golang-20bi
+  in .env specify password without spaces
+3. Start this up
 ```
 docker compose up -d
 ```
