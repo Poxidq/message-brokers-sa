@@ -14,7 +14,7 @@ type Message struct {
 	User    string `json:"user"`
 }
 
-func InitRabbitMQ() (*amqp.Connection, *amqp.Channel, error) {
+func InitRabbitMQ(queueName string) (*amqp.Connection, *amqp.Channel, error) {
 	// RabbitMQ connection parameters
 	rabbitMQHost := config.CFG.RabbitMQHost
 	rabbitMQPort := config.CFG.RabbitMQPort
@@ -32,7 +32,6 @@ func InitRabbitMQ() (*amqp.Connection, *amqp.Channel, error) {
 		return nil, nil, fmt.Errorf("failed to open a channel: %v", err)
 	}
 
-	queueName := "PublishQueue"
 	_, err = ch.QueueDeclare(
 		queueName,
 		true,

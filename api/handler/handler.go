@@ -21,7 +21,7 @@ func HandlePostMessage(c *gin.Context) {
 	}
 
 	// Initialize RabbitMQ connection
-	conn, ch, err := utils.InitRabbitMQ()
+	conn, ch, err := utils.InitRabbitMQ("FilterQueue")
 	if err != nil {
 		log.Printf("Error initializing RabbitMQ: %v", err)
 		c.JSON(http.StatusInternalServerError, gin.H{
@@ -32,7 +32,7 @@ func HandlePostMessage(c *gin.Context) {
 	defer conn.Close()
 	defer ch.Close()
 
-	err = utils.PublishMessage(ch, "PublishQueue", msg)
+	err = utils.PublishMessage(ch, "FilterQueue", msg)
 	if err != nil {
 		log.Printf("Failed to publish message: %v", err)
 		c.JSON(http.StatusInternalServerError, gin.H{
