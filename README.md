@@ -12,6 +12,4 @@ curl localhost:8080/messages -d '{"message":"test","user":"12me"}'
 ```
 
 ## To-do
-- [ ] Filter service
-- [ ] Screaming service
-- [ ] Pipes and filter on the other branch with testing
+- [ ] Pipes and filters in other repo
