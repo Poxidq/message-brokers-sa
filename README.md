@@ -11,5 +11,17 @@ docker compose up -d
 curl localhost:8080/messages -d '{"message":"test","user":"12me"}'
 ```
 
-## To-do
-- [ ] Pipes and filters in other repo
+# Tests
+
+## Time Taken to Send a Message After Applying All Services
+
+### Pipes & Filters
+- **Measurements**: 20ms, 9ms, 4ms, 3ms, 7ms, 4ms, 3ms, 3ms, 4ms, 4ms
+- **Average**: 6.1ms
+
+### RabbitMQ
+- **Measurements**: 16ms, 10ms, 8ms, 11ms, 7ms, 8ms, 7ms, 8ms, 7ms, 7ms
+- **Average**: 8.9ms
+
+### Summary
+- **Pipes & Filters** is **1.46 times faster on average** due to its design (no API communication).
