@@ -24,4 +24,4 @@ curl localhost:8080/messages -d '{"message":"test","user":"12me"}'
 - **Average**: 8.9ms
 
 ### Summary
-- **Pipes & Filters** is **1.46 times faster on average** due to its design (no API communication).
+- **Pipes & Filters** is **1.46 times faster on average** due to its design (no API communication) in this simple case. However, RabbitMQ would be more reliable in high-complexity scenarios, as the pipeline grows.
